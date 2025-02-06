@@ -1,8 +1,6 @@
 # Griptape Cloud Structure-as-a-Slackbot
 
-Fully deployable slack event handler deployable to a Griptape Cloud Structure.
-
-[![Deploy_to_Griptape](https://github.com/griptape-ai/griptape-cloud/assets/2302515/4fd57873-5c93-44a8-8fa3-ac1bf7d73bcc)](https://cloud.griptape.ai/structures/create?sample-name=griptape-slack-handler&type=sample)
+Integrating intelligent LLM-powered applications with Slack is a very popular use-case for Griptape Cloud. This sample provides a complete implementation of an event handler for a Slack Application within a Griptape Structure, ready for you to deploy it on Griptape Cloud.
 
 ## Requirements
 
@@ -53,6 +51,36 @@ That's it! Now find your app in Slack and start chatting. It can be added to cha
 The bot will always respond with a three-dots gif to indicate it has started processing messages. It will then update this message over time, explaining its actions, and then ultimately overwrite the message with its final response.
 
 There are a few ways to configure other behavior of the bot at runtime.
+
+### Channel Filtering
+
+Set environment variables to include or exclude specific Slack channels that the Slackbot Structure should respond in:
+
+The `FILTER_IN_CHANNELS` configuration overrides the `FILTER_OUT_CHANNELS` if both are provided. The following configuration will allow the bot to only respond in channels "A012BA2A9DG" and "B012BA2A9DG".
+
+```bash
+FILTER_IN_CHANNELS="A012BA2A9DG,B012BA2A9DG"
+```
+
+The following configuration will restrict the bot from responding in only these channels "A012BA2A9DG" and "B012BA2A9DG".
+
+```bash
+FILTER_OUT_CHANNELS="A012BA2A9DG,B012BA2A9DG"
+```
+
+The following configuration will disable communication with the bot in direct messages:
+
+```bash
+DISABLE_IM="true"
+```
+
+#### How to find the Channel ID
+
+To find the Channel ID for a particular Slack channel:
+
+1. Right click the channel
+1. Click `View channel details`
+1. Locate the Channel ID at the bottom of the window
 
 ### Dynamic Rulesets
 

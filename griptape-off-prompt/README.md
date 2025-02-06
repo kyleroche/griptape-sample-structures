@@ -1,28 +1,25 @@
+Griptape offers the ability to store information in a configurable vector store called TaskMemory. This can be helpful in cases where you do not want to share information with model providers for security or compliance reasons. It can also help reduce token counts and allow your applications to handle context length constraints. 
+
 This sample summarizes your website of choice into a text message to a friend. You can toggle seamlessly between two Griptape Agents; one that utilizes [Griptape's Task Memory](https://docs.griptape.ai/latest/griptape-framework/structures/task-memory/) and one that does not. 
 
 To learn more, see the [Griptape blog post on Task Memory and Off-Prompt](https://www.griptape.ai/blog/the-power-of-task-memory-and-off-prompt-tm).
 
-[![Deploy_to_Griptape](https://github.com/griptape-ai/griptape-cloud/assets/2302515/4fd57873-5c93-44a8-8fa3-ac1bf7d73bcc)](https://cloud.griptape.ai/structures/create?sample-name=griptape-off-prompt&type=sample)
+[![Deploy_to_Griptape](https://github.com/griptape-ai/griptape-cloud/assets/2302515/4fd57873-5c93-44a8-8fa3-ac1bf7d73bcc)](https://cloud.griptape.ai/structures/create/griptape-off-prompt)
 
 > ⚠️ **NOTE:** The repository URL is hardcoded to griptape-ai in the Deploy to Griptape Cloud button. It is not dynamically updated as a variable. If you fork this repo, update the URL accordingly. 
 > 
 ## Requirements
 
 - [Anthropic API Key](https://console.anthropic.com/settings/keys)
-- [Voyage API Key](https://dash.voyageai.com/)
+- [Open AI Key](https://platform.openai.com/api-keys)
 - [Griptape Cloud Key](https://cloud.griptape.ai/configuration/api-keys)
 
 ## Configuration
 
-env
-```
-# None Needed
-```
-
-env_secrets
 ```
 ANTHROPIC_API_KEY=<encrypted_value> # Fill in with your own key
-VOYAGE_API_KEY=<encrypted_value> # Fill in with your own key
+# OPENAI KEY IS REQUIRED FOR OFF-PROMPT FLAG
+OPENAI_API_KEY=<encrypted_value> # Fill in with your own key. 
 GT_CLOUD_API_KEY=<encrypted_value> # Fill in with your own key
 # OPENAI KEY IS REQUIRED FOR OFF-PROMPT FLAG
 OPENAI_API_KEY=<encrypted_value> # Fill in with your own key. 
